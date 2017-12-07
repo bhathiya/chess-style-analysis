@@ -8,8 +8,6 @@ from sklearn.decomposition import PCA
 
 input_file="/apps/chess/players/output/chess_all_modified_names.csv"
 
-np.random.seed(42)
-
 raw_df = pd.read_csv(input_file)
 df = raw_df._get_numeric_data()
 data = df.as_matrix()
