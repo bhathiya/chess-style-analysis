@@ -1,32 +1,3 @@
-"""
-===========================================================
-A demo of K-Means clustering on the handwritten digits data
-===========================================================
-
-In this example we compare the various initialization strategies for
-K-means in terms of runtime and quality of the results.
-
-As the ground truth is known here, we also apply different cluster
-quality metrics to judge the goodness of fit of the cluster labels to the
-ground truth.
-
-Cluster quality metrics evaluated (see :ref:`clustering_evaluation` for
-definitions and discussions of the metrics):
-
-=========== ========================================================
-Shorthand    full name
-=========== ========================================================
-homo         homogeneity score
-compl        completeness score
-v-meas       V measure
-ARI          adjusted Rand index
-AMI          adjusted mutual information
-silhouette   silhouette coefficient
-=========== ========================================================
-
-"""
-print(__doc__)
-
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -35,7 +6,6 @@ import matplotlib.cm as cmx
 
 from sklearn.decomposition import PCA
 
-#input_file="/apps/chess/players/output/chess_all_modified.csv"
 input_file="/apps/chess/players/output/chess_all_modified_names.csv"
 
 np.random.seed(42)
