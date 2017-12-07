@@ -17,7 +17,6 @@ data = df.as_matrix()
 labels = raw_df['Player']
 uniqLabels = list(set(labels))
 
-# Set the color map to match the number of species
 z = range(1,len(uniqLabels))
 prism = plt.get_cmap('prism')
 cNorm  = colors.Normalize(vmin=0, vmax=len(uniqLabels))
@@ -25,10 +24,8 @@ scalarMap = cmx.ScalarMappable(norm=cNorm, cmap=prism)
 
 reduced_data = PCA(n_components=2).fit_transform(data)
 
-# Plot each species
 for i in range(len(uniqLabels)):
     indx = labels == uniqLabels[i]
-    print(reduced_data[:, 0][indx], reduced_data[:, 1][indx])
     plt.scatter(reduced_data[:, 0][indx], reduced_data[:, 1][indx], s=15, color=scalarMap.to_rgba(i), label=uniqLabels[i])
 
 x_min, x_max = reduced_data[:, 0].min() - 1, reduced_data[:, 0].max() + 1
